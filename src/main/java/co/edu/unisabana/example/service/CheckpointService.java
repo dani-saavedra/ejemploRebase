@@ -24,7 +24,7 @@ public class CheckpointService {
     if (checkpoint.dayOfMonth < 0) {
       throw new IllegalArgumentException("Invalid date " + checkpoint.dayOfMonth);
     }
-    if ("3".equals(checkpoint.facility) && checkpoint.dayOfMonth == DIA_MANTENIMIENTO) {
+    if ("2".equals(checkpoint.facility) && checkpoint.dayOfMonth == DIA_MANTENIMIENTO) {
       throw new MaintenenceDayException(checkpoint.dayOfMonth, checkpoint.facility);
     }
     Checkin checkin = new Checkin(checkpoint.facility, checkpoint.driver, checkpoint.dayOfMonth);
