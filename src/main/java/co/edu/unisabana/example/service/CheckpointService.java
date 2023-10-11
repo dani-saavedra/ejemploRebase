@@ -43,6 +43,7 @@ public class CheckpointService {
     }
     Checkout checkout = new Checkout(checkpoint.facility, checkpoint.driver,
         checkpoint.dayOfMonth);
+
     checkpointPort.saveCheckout(checkout);
   }
 }
