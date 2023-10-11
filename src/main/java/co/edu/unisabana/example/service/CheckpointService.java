@@ -38,7 +38,7 @@ public class CheckpointService {
     if (lastCheckin == null) {
       throw new IllegalArgumentException("don't exist previously check in");
     }
-    if (checkpoint.dayOfMonth > 31 || checkpoint.dayOfMonth < 1) {
+    if (checkpoint.dayOfMonth > 31 || checkpoint.dayOfMonth < 0) {
       throw new IllegalArgumentException("Invalid date");
     }
     Checkout checkout = new Checkout(checkpoint.facility, checkpoint.driver,
