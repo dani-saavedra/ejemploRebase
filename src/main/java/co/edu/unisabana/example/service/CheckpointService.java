@@ -36,13 +36,14 @@ public class CheckpointService {
     Checkin lastCheckin = checkpointPort.findLastCheckin(checkpoint.driver,
         checkpoint.facility);
     if (lastCheckin == null) {
-      throw new IllegalArgumentException("don't exist previously check in");
+      throw new IllegalArgumentException("don't exist previously checkin");
     }
     if (checkpoint.dayOfMonth > 31 || checkpoint.dayOfMonth < 0) {
       throw new IllegalArgumentException("Invalid date");
     }
     Checkout checkout = new Checkout(checkpoint.facility, checkpoint.driver,
         checkpoint.dayOfMonth);
+
     checkpointPort.saveCheckout(checkout);
   }
 }
