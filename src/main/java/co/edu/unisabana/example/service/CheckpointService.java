@@ -21,7 +21,7 @@ public class CheckpointService {
   }
 
   public void checkin(CheckpointDTO checkpoint) {
-    if (checkpoint.dayOfMonth < 1) {
+    if (checkpoint.dayOfMonth < 0) {
       throw new IllegalArgumentException("Invalid date");
     }
     if ("3".equals(checkpoint.facility) && checkpoint.dayOfMonth == DIA_MANTENIMIENTO) {
